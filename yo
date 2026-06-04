@@ -1,0 +1,7 @@
+echo "# su34443" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/s34443-lang/su34443.git
+git push -u origin main
