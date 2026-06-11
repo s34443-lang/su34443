@@ -1,4 +1,3 @@
-/* Google Font (optional) */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 * {
@@ -9,164 +8,142 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    background: linear-gradient(
-        135deg,
-        #667eea 0%,
-        #764ba2 50%,
-        #6a11cb 100%
-    );
-    background-size: 400% 400%;
-    animation: gradientMove 12s ease infinite;
+    background: #050505;
     color: #fff;
+    overflow-x: hidden;
+    position: relative;
     min-height: 100vh;
 }
 
-/* Animated Background */
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* Floating Blue Particles */
+.particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    bottom: -20px;
+    border-radius: 50%;
+    background: #00aaff;
+    box-shadow:
+        0 0 5px #00aaff,
+        0 0 10px #00aaff,
+        0 0 20px #00aaff;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
 }
 
 /* Header */
 header {
     text-align: center;
     padding: 80px 20px;
-    animation: fadeDown 1s ease;
 }
 
 header h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    background: linear-gradient(90deg, #fff, #00f2fe);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow:
+        0 0 10px #008cff,
+        0 0 30px #008cff;
 }
 
 header p {
-    font-size: 1.2rem;
-    opacity: 0.9;
+    color: #b8c7d9;
 }
 
-/* Glass Card Sections */
+/* Glass Cards */
 section {
-    max-width: 850px;
+    max-width: 900px;
     margin: 25px auto;
     padding: 30px;
+
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(0,140,255,0.2);
+
     border-radius: 20px;
 
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
 
     box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.2);
+        0 0 20px rgba(0,140,255,0.08);
 
-    transition: all 0.4s ease;
-    animation: fadeUp 0.8s ease;
+    transition: 0.4s ease;
 }
 
-/* Hover Lift Effect */
 section:hover {
-    transform: translateY(-8px) scale(1.01);
+    transform: translateY(-8px);
+
+    border-color: rgba(0,140,255,0.5);
+
     box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.3);
+        0 0 30px rgba(0,140,255,0.25);
 }
 
-/* Section Titles */
 h2 {
-    font-size: 2rem;
+    color: #00aaff;
     margin-bottom: 20px;
-
-    background: linear-gradient(
-        90deg,
-        #00f2fe,
-        #4facfe,
-        #ffffff
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px #008cff;
 }
 
-/* Projects */
 .project {
-    padding: 20px;
     margin-bottom: 20px;
+    padding: 15px;
     border-radius: 15px;
-
-    background: rgba(255,255,255,0.08);
-
-    transition: all 0.4s ease;
+    transition: 0.3s;
 }
 
 .project:hover {
-    transform: translateX(10px);
-    background: rgba(255,255,255,0.15);
+    background: rgba(0,140,255,0.08);
+    transform: translateX(8px);
 }
 
 .project h3 {
-    color: #00f2fe;
-    margin-bottom: 10px;
+    color: #4db8ff;
 }
 
-/* Animated Lists */
 ul {
     list-style: none;
 }
 
 ul li {
-    position: relative;
+    margin: 10px 0;
     padding-left: 25px;
-    margin-bottom: 10px;
-    transition: transform 0.3s;
+    position: relative;
 }
 
 ul li::before {
-    content: "✦";
+    content: "●";
     position: absolute;
     left: 0;
-    color: #00f2fe;
+    color: #00aaff;
+    text-shadow: 0 0 8px #00aaff;
 }
 
-ul li:hover {
-    transform: translateX(8px);
-}
-
-/* Footer */
 footer {
     text-align: center;
     padding: 25px;
-    margin-top: 40px;
-
-    background: rgba(0,0,0,0.2);
-    backdrop-filter: blur(10px);
-
-    animation: fadeUp 1s ease;
-}
-
-/* Entrance Animations */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    color: #8ea4bb;
+    border-top: 1px solid rgba(0,140,255,0.15);
 }
