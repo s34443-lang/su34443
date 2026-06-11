@@ -8,7 +8,7 @@ body {
 
     /* Purple to Black Gradient */
     background: linear-gradient(
-        0deg,
+        180deg,
         #7b2cbf 0%,
         #5a189a 30%,
         #240046 60%,
@@ -38,7 +38,7 @@ header {
     padding: 60px 20px;
 
     background: linear-gradient(
-        0deg,
+        180deg,
         rgba(123, 44, 191, 0.9),
         rgba(0, 0, 0, 0.9)
     );
