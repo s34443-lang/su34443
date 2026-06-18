@@ -141,9 +141,10 @@ ul li:hover {
 }
 
 .gif-container img {
-    width: 100%;
+    width: auto;
     height: auto;
-    max-height: 400px; /* Prevents the GIF from being excessively tall */
+    max-height: 400px;
+    max-width: 400px;/* Prevents the GIF from being excessively tall */
     object-fit: cover; /* Keeps aspect ratio clean */
     
     /* Style matches your section boxes */
