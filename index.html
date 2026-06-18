@@ -1,100 +1,47 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio</title>
-<link rel="stylesheet" href="style-enhanced.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="เว็บไซต์แสดงผลงานและทักษะของ Suppasiri">
+    <title>ความภาคภูมิใจของ SUPPASIRI</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>สวัสดี! ผมคือ SUPPASIRI</h1>
+        <p>นี่คือผลงานและความภาคภูมิใจของผม</p>
+    </header>
 
-<div class="starfield"></div>
-
-<header>
-    <h1>Suppasiri</h1>
-</header>
-
-<main class="bento-grid">
-
-    <!-- About: large card -->
-    <section class="bento-item bento-large">
-        <h2>About me</h2>
-        <p>
-            I'm a developer who loves building interfaces that feel alive —
-            equal parts engineering and craft. I work mostly with React,
-            CSS animation, and a stubborn love of purple gradients.
-        </p>
-        <ul>
-            <li>3+ years building production web apps</li>
-            <li>Obsessed with micro-interactions</li>
-            <li>Based in Bangkok, Thailand</li>
-        </ul>
+    <section id="about">
+        <h2>เกี่ยวกับผม</h2>
+        <p>ผมเป็นนักเร๊ยนห้องภาษาในโรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์</p>
     </section>
 
-    <!-- Featured project: wide card -->
-    <section class="bento-item bento-wide">
-        <h2>Featured project</h2>
+    <section id="projects">
+        <h2>ผลงานของผม</h2>
         <div class="project">
-            <h3>Nebula Dashboard</h3>
-            <p>A real-time analytics dashboard with animated data visualizations and a dark, cosmic UI theme.</p>
-            <div>
-                <span class="tag">React</span>
-                <span class="tag">D3.js</span>
-                <span class="tag">WebSockets</span>
-            </div>
+            <h3>เว็บไซต์ Portfolio</h3>
+            <p>เว็บไซต์นี้เป็นหนึ่งในผลงานที่ผมสร้างขึ้นเพื่อแสดงความสามารถของผม</p>
         </div>
-        <a href="#" class="btn">View case study</a>
-    </section>
+</section>
 
-    <!-- Skills: small card -->
-    <section class="bento-item bento-small">
-        <h2>Skills</h2>
-        <ul>
-            <li>JavaScript / TypeScript</li>
-            <li>React &amp; Vue</li>
-            <li>CSS animation</li>
-            <li>Node.js</li>
-        </ul>
-    </section>
+<section id="skills">
+    <h2>ทักษะของผม</h2>
+    <ul>
+        <li>การใช้ภาษาอังกฤษ</li>
+    </ul>
+</section>
 
-    <!-- Project two: small card -->
-    <section class="bento-item bento-small">
-        <div class="project">
-            <h3>Aurora UI Kit</h3>
-            <p>An open-source component library with glassmorphic styling.</p>
-            <div>
-                <span class="tag">Design System</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Visual / GIF card -->
-    <div class="bento-item bento-small gif-container">
-        <img src="https://media.giphy.com/media/3o7aTskHEUdgCQAXde/giphy.gif" alt="Animated visual">
+<div class="gif-container">
+        <img src="Rotating_earth_(large).gif" alt="Animated Graphic">
     </div>
-
-    <!-- Project three: small card -->
-    <section class="bento-item bento-small">
-        <div class="project">
-            <h3>Pulse Player</h3>
-            <p>A music player UI with audio-reactive visualizations.</p>
-            <div>
-                <span class="tag">Web Audio API</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact: wide card -->
-    <section class="bento-item bento-wide">
-        <h2>ติดต่อผมได้ที่</h2>
-        <a href="s34443@banbung.ac.th" class="btn">s34443@banbung.ac.th</a>
-    </section>
-
-</main>
-
+    
 <footer>
-    <p>&copy; 2026 Jane Doe. Built with curiosity and way too much purple.</p>
+    <p>ติดต่อผมได้ที่: <a href="mailto:somchai@example.com">s34443@banbung.ac.th</a></p>
+    <p>&copy; <span id="year"></span> SUPPASIRI. All rights reserved.</p>
 </footer>
-
+    
+<script src="script.js"></script>
 </body>
 </html>
