@@ -128,6 +128,38 @@ ul li:hover {
     transform: translateX(8px);
 }
 
+/* GIF Container Styling */
+.gif-container {
+    max-width: 850px;
+    margin: 30px auto; /* Matches the spacing of your sections */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Reuses your existing fade-up entry animation */
+    animation: fadeUp 1s ease forwards; 
+}
+
+.gif-container img {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Prevents the GIF from being excessively tall */
+    object-fit: cover; /* Keeps aspect ratio clean */
+    
+    /* Style matches your section boxes */
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Gives the GIF the same cool hover effect as your sections */
+.gif-container img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(123, 44, 191, 0.5);
+}
+
 /* Footer */
 footer {
     text-align: center;
