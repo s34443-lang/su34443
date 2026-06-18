@@ -97,7 +97,7 @@ body::after {
 }
  
 /* Everything else sits above the glow layer */
-header, main, section, .bento-item, footer {
+header, section, .gif-container, footer {
     position: relative;
     z-index: 1;
 }
@@ -197,119 +197,32 @@ header::after {
 }
  
 /* ============================================= */
-/* Bento Grid Layout                              */
+/* Sections                                       */
 /* ============================================= */
-main.bento-grid {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(160px, auto);
-    gap: 22px;
-}
- 
-/* Sizing variants */
-.bento-large {
-    grid-column: span 2;
-    grid-row: span 2;
-}
- 
-.bento-wide {
-    grid-column: span 4;
-}
- 
-.bento-small {
-    grid-column: span 2;
-}
- 
-/* Responsive collapse */
-@media (max-width: 900px) {
-    main.bento-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .bento-large,
-    .bento-wide {
-        grid-column: span 2;
-    }
-    .bento-small {
-        grid-column: span 1;
-    }
-}
- 
-@media (max-width: 560px) {
-    main.bento-grid {
-        grid-template-columns: 1fr;
-    }
-    .bento-large,
-    .bento-wide,
-    .bento-small {
-        grid-column: span 1;
-        grid-row: auto;
-    }
-}
- 
-/* ============================================= */
-/* Sections / Bento Items                         */
-/* ============================================= */
-section,
-.bento-item {
+section {
+    max-width: 850px;
+    margin: 30px auto;
     padding: 25px;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    animation: fadeUp 0.8s ease forwards;
-    opacity: 0;
+    animation: fadeUp 1s ease forwards;
     transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
     position: relative;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
 }
  
-/* Stagger entrances across the grid */
-.bento-item:nth-of-type(1) { animation-delay: 0.05s; }
-.bento-item:nth-of-type(2) { animation-delay: 0.15s; }
-.bento-item:nth-of-type(3) { animation-delay: 0.25s; }
-.bento-item:nth-of-type(4) { animation-delay: 0.35s; }
-.bento-item:nth-of-type(5) { animation-delay: 0.45s; }
-.bento-item:nth-of-type(6) { animation-delay: 0.55s; }
-.bento-item:nth-of-type(7) { animation-delay: 0.65s; }
- 
-/* Visual card (GIF) gets no padding, image fills the tile */
-.bento-item.gif-container {
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
- 
-.bento-item.gif-container img {
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    max-height: none;
-    object-fit: cover;
-    border-radius: 15px;
-    border: none;
-    box-shadow: none;
-}
- 
-.bento-item p {
-    color: #e8d9ff;
-    flex-grow: 1;
-}
- 
-.bento-item .btn {
-    align-self: flex-start;
-    margin-top: 14px;
-}
+/* Stagger section entrances if you add data-index, e.g. <section style="animation-delay: 0.15s"> */
+section:nth-of-type(1) { animation-delay: 0.05s; }
+section:nth-of-type(2) { animation-delay: 0.2s; }
+section:nth-of-type(3) { animation-delay: 0.35s; }
+section:nth-of-type(4) { animation-delay: 0.5s; }
+section:nth-of-type(5) { animation-delay: 0.65s; }
  
 /* Subtle animated sheen sweeping across each card on hover */
-section::before,
-.bento-item::before {
+section::before {
     content: "";
     position: absolute;
     top: 0;
@@ -327,14 +240,12 @@ section::before,
     pointer-events: none;
 }
  
-section:hover::before,
-.bento-item:hover::before {
+section:hover::before {
     left: 125%;
 }
  
 /* Card Hover Effect */
-section:hover,
-.bento-item:hover {
+section:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 35px rgba(123, 44, 191, 0.5);
     border-color: rgba(199, 125, 255, 0.5);
@@ -498,6 +409,38 @@ button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(123, 44, 191, 0.6), 0 0 20px rgba(199, 125, 255, 0.4);
     border-color: #e0aaff;
+}
+ 
+/* ============================================= */
+/* GIF Container Styling                          */
+/* ============================================= */
+.gif-container {
+    max-width: 850px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeUp 1s ease forwards;
+}
+ 
+.gif-container img {
+    width: auto;
+    height: auto;
+    max-height: 400px;
+    max-width: 400px;
+    object-fit: cover;
+ 
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+ 
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+ 
+.gif-container img:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(123, 44, 191, 0.5);
+    border-color: rgba(199, 125, 255, 0.5);
 }
  
 /* ============================================= */
